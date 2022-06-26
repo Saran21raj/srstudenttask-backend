@@ -29,7 +29,6 @@ async function loadApp()
                 // res.send({msg:"token valid"})
                 try{
                     const user=jwt.verify(token,process.env.JWT_SECRET_KEY);
-                    console.log(user);
                     // res.send(user);
                     next();
                 }

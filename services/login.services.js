@@ -25,7 +25,6 @@ const services={
         }
         catch(err)
         {
-            console.log("Error  Data",err);
             res.sendStatus(500);
         }
     },
@@ -50,7 +49,6 @@ const services={
         }
         catch(err)
         {
-            console.log("Error Inserting Data",err);
             res.sendStatus(500);
         }
     }

@@ -51,7 +51,6 @@ const services={
         }
         catch(err)
         {
-            console.log("Error ",err);
             res.sendStatus(500);
         }
     },
@@ -91,13 +90,11 @@ const services={
                     regNo:regNo,
                 }
                 await db.studentsAccount.insertOne(details);
-                console.log("User Registered Successfully");
                 res.send({mes:"User Registered Successfully"})
             }
         }
         catch(err)
         {
-            console.log("Error ",err);
             res.sendStatus(500);
         }
     },
@@ -105,13 +102,12 @@ const services={
         try{
             await db.studentsAccount.find({}).toArray(function(err, result) {
                 if (err) throw err;
-                console.log(result);
                 res.send(result);
               });
         }
         catch(err)
         {
-            console.log("error",err);
+            res.send(err);
         }
     },
     async updateTopic(req,res){
@@ -142,7 +138,7 @@ const services={
             });
         }
         catch(err){
-            console.log(err);
+            res.send(err);
         }
         
     },
@@ -159,7 +155,7 @@ const services={
             // console.log(req.body);
         }
         catch(err){
-            console.log(err);
+            res.send(err);
         }
     },
     async newTasks(req,res){
@@ -174,7 +170,7 @@ const services={
             });
         }
         catch(err){
-            console.log(err);
+            res.send(err);
         }
     },
     async oldTasks(req,res){
@@ -189,7 +185,7 @@ const services={
             });
         }
         catch(err){
-            console.log(err);
+            res.send(err);
         }
     },
     async submitNewTask(req,res){
@@ -200,7 +196,7 @@ const services={
             res.send({msg:"Updated"});
         }
         catch(err){
-            console.log(err);
+            res.send(err);
         }
     },
     async deleteTask(req,res){
@@ -209,7 +205,7 @@ const services={
             res.send({msg:"Deleted"});
         }
         catch(err){
-            console.log(err);
+            res.send(err);
         }
     }
 }

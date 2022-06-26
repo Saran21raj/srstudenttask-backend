@@ -24,7 +24,7 @@ const services={
             });
         }
         catch(err){
-            console.log(err);
+            res.send(err);
         }
     },
     async submitTask(req,res){
@@ -66,7 +66,7 @@ const services={
             });
         }
         catch(err){
-            console.log(err);
+            res.send(err);
         }
     },
     async viewOldTasks(req,res){
@@ -81,7 +81,7 @@ const services={
             });
         }
         catch(err){
-            console.log(err);
+            res.send(err);
         }
     }
 }
